@@ -18,5 +18,20 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+  result = {}
+  row_index = 0 
+  while row_index < nds.length do
+    total = 0 
+    # loop through movies of the director 
+    movies_num = nds[row_index][:movies].length
+    movies_index = 0 
+    while movies_index < movies_num do 
+      # add movie gross to total
+      total += nds[row_index][:movies][movies_index][:worldwide_gross]
+      movies_index += 1 
+    end
+    result[nds[row_index][:name]] = total # add key and value to result hash
+    row_index += 1 
+  end
+  result
 end
