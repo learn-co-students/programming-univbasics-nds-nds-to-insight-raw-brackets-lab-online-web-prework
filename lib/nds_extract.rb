@@ -8,10 +8,9 @@ def directors_totals(nds)
     total = 0
     director_hash[:movies].each do |movie|
         total += movie[:worldwide_gross]
-        #binding.pry
     end
     hash[director_hash[:name]] = total
-    pp total
+   # binding.pry
   end 
   hash
 end
