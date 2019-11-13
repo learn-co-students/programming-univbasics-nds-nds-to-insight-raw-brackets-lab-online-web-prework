@@ -13,8 +13,8 @@ directors_name = nds[row_index][:name]
   # The movies variable show the names of all the movies.
  
 directors_info = directors_name, movies
-# directors_info is a variable containing all information of the first 2 variables.
-# gross = movies[row_index][:worldwide_gross]
+ # directors_info is a variable containing all information of the first 2 variables.
+
 ## directors_gross = movies[column_index][:worldwide_gross]
 # # The directors_gross is a variable of the sum of all of each directors movies.
 
@@ -22,9 +22,13 @@ directors_info = directors_name, movies
 # totals is a hash combining the two varaibles.
 
   row_index += 1
+  pp nds[row_index]
+  # pp directors_info[0...7]
+  # pp directors_name, movies[0..7][1][:worldwide_gross]
   # pp directors_name, movies
-pp directors_info[:worldwide_gross]
+# pp directors_info
 end
+
 
   # Remember, it's always OK to pretty print what you get *in* to make sure
   # that you know what you're starting with!
@@ -42,5 +46,5 @@ end
   #
   #
   # Be sure to return the result at the end!
-  nil
+  
 end
