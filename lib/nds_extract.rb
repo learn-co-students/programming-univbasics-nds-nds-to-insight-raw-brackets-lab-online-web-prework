@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
+require 'pp'
 
 def directors_totals(nds)
   # Remember, it's always OK to pretty print what you get *in* to make sure
@@ -18,5 +19,19 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+  row = 0 
+  while row < nds.length do 
+    gross = 0 
+    column = 0 
+    name = nds[row][:name]
+    while column < nds[row][:movies].length do
+      gross += nds[row][:movies][column][:worldwide_gross]
+      column += 1 
+    end 
+    result[name] = gross 
+    row += 1 
+  end 
+  result 
 end
+
+pp directors_database
