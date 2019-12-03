@@ -1,7 +1,10 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'directors_database'
 
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'directors_database'
+require 'pry'
 def directors_totals(nds)
+   
   # Remember, it's always OK to pretty print what you get *in* to make sure
   # that you know what you're starting with!
   #
@@ -18,5 +21,23 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+totals= {
+  
+}
+row_index =0 
+while row_index < nds.length do 
+
+director=nds [row_index][:name]
+totals[director]= 0
+column_index=0
+while column_index < nds[row_index][:movies].length do 
+ 
+totals[director]+=nds[row_index][:movies][column_index][:worldwide_gross]
+column_index += 1 
+end 
+row_index += 1 
+end
+ 
+totals 
+  
 end
