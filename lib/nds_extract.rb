@@ -9,7 +9,6 @@ directors_gross_total = {}
 row_index = 0
 while row_index < nds.length do
   directors_gross_total[:name] << "#{nds[row_index][:name]}"
-  directors_gross_total << "#{nds[row_index][:name]}"
   column_index = 0
   #binding.pry
   while column_index < nds[row_index][:movies].length do
