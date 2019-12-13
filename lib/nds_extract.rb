@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
+require 'pry'
 
 def directors_totals(nds)
   # Remember, it's always OK to pretty print what you get *in* to make sure
@@ -7,8 +8,8 @@ def directors_totals(nds)
   #
   #
   # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
-  result = {
-  }
+  # result = {
+  # }
   #
   # Use loops, variables and the accessing method, [], to loop through the NDS
   # and total up all the
@@ -18,5 +19,21 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+  d = 0
+  results = {}
+  while d < nds.length do
+    m = 0
+    total = 0
+    while m < nds[d][:movies].length do
+      # puts nds[d][:movies][m][:worldwide_gross]
+      total += nds[d][:movies][m][:worldwide_gross]
+      m += 1
+    end
+    results[nds[d][:name]] = total
+    # binding.pry
+    d += 1
+  end
+  results
 end
+
+directors_totals(directors_database)
