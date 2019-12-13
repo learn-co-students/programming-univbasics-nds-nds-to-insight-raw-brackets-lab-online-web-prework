@@ -18,5 +18,14 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+  d = 0
+  while d < nds.length do
+    puts nds[d][:movies]
+    while m < nds[d][:movies].length do
+    
+    end
+    d += 1
+  end
 end
+
+directors_totals(directors_database)
