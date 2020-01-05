@@ -10,19 +10,8 @@ require 'directors_database'
   
 
 def directors_totals(nds)
-
-
   directors_totals = {}
   index1 = 0 
- 
-  # while index1 < nds[index1].count do 
-  #   dir_name = nds[index1][:name]
-  #   directors_totals[:dir_name] 
-  #   index1 += 1 
-  # end 
-  # puts directors_totals
-  # directors_totals
-  
   row_index = 0 
   while row_index < nds.length do 
     dir_name = nds[row_index][:name]
@@ -37,11 +26,9 @@ def directors_totals(nds)
     end 
     directors_totals[dir_name] = dir_total
     row_index += 1 
-    
   end 
  puts directors_totals
  directors_totals
-  
 end
 
 
