@@ -1,22 +1,49 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 
+#gross 
+#puts directors_database[index1][:movies][index2][:worldwide_gross]  
+#dir name 
+#puts directors_database[index1][:name]
+
+
+  
+
 def directors_totals(nds)
-  # Remember, it's always OK to pretty print what you get *in* to make sure
-  # that you know what you're starting with!
-  #
-  #
-  # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
-  result = {
-  }
-  #
-  # Use loops, variables and the accessing method, [], to loop through the NDS
-  # and total up all the
-  # ...
-  # ...
-  # ...
-  #
-  #
-  # Be sure to return the result at the end!
-  nil
+
+
+  directors_totals = {}
+  index1 = 0 
+ 
+  # while index1 < nds[index1].count do 
+  #   dir_name = nds[index1][:name]
+  #   directors_totals[:dir_name] 
+  #   index1 += 1 
+  # end 
+  # puts directors_totals
+  # directors_totals
+  
+  row_index = 0 
+  while row_index < nds.length do 
+    dir_name = nds[row_index][:name]
+    column_index = 0 
+    dir_total = 0 
+  #this is where we will pull the name from [:name]
+    while column_index < nds[row_index][:movies].length do 
+      dir_gross = nds[row_index][:movies][column_index][:worldwide_gross]
+      dir_total += dir_gross
+      column_index += 1 
+      # puts "row is #{row_index} column is #{column_index}"
+    end 
+    directors_totals[dir_name] = dir_total
+    row_index += 1 
+    
+  end 
+ puts directors_totals
+ directors_totals
+  
 end
+
+
+directors_totals(directors_database)
+
